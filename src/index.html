@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <title>Document</title>
+  </head>
+
+  <body class="bg-slate-950">
+    <section id="content">
+      <h1 class="text-3xl font-bold text-center relative mt-4 text-purple-600">
+        TODO-LIST
+      </h1>
+
+      <section class="list-container flex gap-16" id="listContainer"></section>
+
+      <div class="text-center">
+        <div class="">
+          <label for="tweet" class="text-white font-bold">TASK:</label>
+          <form
+            id="form"
+            class="flex flex-col items-center justify-center gap-3"
+          >
+            <label for="tweet"></label>
+            <textarea id="listArea" class=""></textarea>
+            <input
+              type="submit"
+              class="bg-purple-800 text-white font-bold text-2xl p-1 rounded-lg mb-4"
+              value="Agregar"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
