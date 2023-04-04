@@ -32,8 +32,7 @@ function addTask (event) {
 
     
     if (listArea === '') {
-        mostrarError('Un mensaje no puede ir vacio');
-
+        mostrarError('No puedes agregar una tarea vacia');
         return;
     }
 
@@ -52,15 +51,21 @@ function addTask (event) {
     form.reset();
 }
 
-
 function mostrarError (error) {
+
     const mensajeDeError = document.createElement('P');
     mensajeDeError.textContent = error;
     mensajeDeError.classList.add('error');
 
     // Insertar en el contenido
-    const content = document.querySelector('#content');
-    content.appendChild(mensajeDeError);
+    const form = document.querySelector('#form');
+    form.appendChild(mensajeDeError);
+
+    const alerta = mensajeDeError.querySelector('.error');
+
+    if (alerta) {
+        alerta.remove();
+    }
 
     // Elimina la alerta despues de tres segundos
     setTimeout(() => {
@@ -86,12 +91,12 @@ function createHTML () {
 
             const card = document.createElement('DIV');
             const p = document.createElement('P');
-            card.classList.add('card');
-            card.classList.add('text-lg');
+            card.classList.add('card', 'text-lg',  'transition-all');
 
             p.innerText = listArea.listArea;
 
             card.appendChild(btnDelete);
+            card.appendChild(p);
 
             listContainer.appendChild(card);
         })
@@ -104,13 +109,11 @@ function sincronizarStorage () {
     localStorage.setItem( 'lists', JSON.stringify(lists) );
 }
 
-
 function deleteList(id) {
     lists = lists.filter( listArea => listArea.id !== id );
 
     createHTML();
 }
-
 
 function clearHTML () {
     while (listContainer.firstChild) {

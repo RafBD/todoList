@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
 
-    <title>Document</title>
+    <title>TODO-LIST</title>
   </head>
 
   <body class="bg-slate-950">
@@ -16,17 +17,15 @@
         TODO-LIST
       </h1>
 
-      <section class="list-container flex gap-16" id="listContainer"></section>
-
-      <div class="text-center">
-        <div class="">
+      <div class="text-center m-4">
+        <div>
           <label for="tweet" class="text-white font-bold">TASK:</label>
           <form
             id="form"
             class="flex flex-col items-center justify-center gap-3"
           >
             <label for="tweet"></label>
-            <textarea id="listArea" class=""></textarea>
+            <textarea id="listArea" class="" cols="30" rows="3"></textarea>
             <input
               type="submit"
               class="bg-purple-800 text-white font-bold text-2xl p-1 rounded-lg mb-4"
@@ -35,6 +34,11 @@
           </form>
         </div>
       </div>
+
+      <section
+        class="gap-16 m-12 p-8 grid grid-cols-4 transition-all"
+        id="listContainer"
+      ></section>
     </section>
 
     <script src="app.js"></script>

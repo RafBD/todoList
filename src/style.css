@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.list-container {
-    margin: 3rem auto;
-    padding: 2rem;
-}
-
 .card {
     width: 14rem;
     height: 14rem;
@@ -21,12 +16,21 @@
     box-shadow: 5px 5px 0px #04b0ff, -5px -5px 0px rgb(147, 51, 234);
 }
 
-.delete-list,
-.delete-list:hover {
+.delete-list {
+    text-align: center;
+    width: 30px;
+    height: 30px;
     float: right;
     cursor: pointer;
     color: red;
     font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+
+.delete-list:hover {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
 }
 
 .error {
